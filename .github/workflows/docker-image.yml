@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ main ]
 
-name: Build and Scan
+name: Build
 env:
   # The Twistlock user with the CI User role
   TL_USER: 003e0ae1-64a8-498c-a7e8-2415eb237d2a
