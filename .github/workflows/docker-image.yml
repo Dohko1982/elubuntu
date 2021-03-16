@@ -12,6 +12,7 @@ env:
   TL_PASS: KIQ8em/dHSL/vO8lgh8BAcYmZ14=
   # The base URL for the console -- http://console.<my_company>.com:8083 -- without a trailing /
   TL_CONSOLE_URL: https://us-east1.cloud.twistlock.com/us-2-158286553
+  CONTAINER_IMAGE: Dohko1982/elubuntu:${{ github.sha }}
 
 jobs:
 
@@ -30,13 +31,13 @@ jobs:
 
     - name: Build the Docker image
       id: build-image
-      run: docker build -t primero .
+      run: |
+        docker build -t $CONTAINER_IMAGE .
+       # echo "::set-output name=image::"
     
     - name: Scan image
-      env:
-        CONTAINER_IMAGE: ${{ steps.build-image.outputs.image }}
-      run: echo pasa
+    
+      run: echo $CONTAINER_IMAGE
 
     - name: cuarta parte
-      run: echo $CONTAINER_IMAGE.
-           echo $TL_PASS.
+      run: echo $TL_USER .
