@@ -25,5 +25,5 @@ jobs:
     - name: Build the Docker image
       run: docker build -t primero .
     - name: segunda parte
-      run: echo "$TL_USER"
+      run: echo $TL_USER
           
