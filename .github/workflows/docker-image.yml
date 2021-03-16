@@ -36,8 +36,9 @@ jobs:
        # echo "::set-output name=image::"
     
     - name: Scan image
-    
-      run: echo $CONTAINER_IMAGE
+      run: |
+        ./twistcli images scan --details -address $TL_CONSOLE_URL -u $TL_USER -p $TL_PASS $CONTAINER_IMAGE
+        echo $CONTAINER_IMAGE
 
     - name: cuarta parte
       run: echo $TL_USER .
