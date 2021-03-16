@@ -34,7 +34,6 @@ jobs:
     - name: Scan image
       env:
         CONTAINER_IMAGE: ${{ steps.build-image.outputs.image }}
-      run:
 
     - name: cuarta parte
       run: echo $CONTAINER_IMAGE.
