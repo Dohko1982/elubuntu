@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 env:
-  # The Twistlock user with the CI User role
+  # The Twistlock user with the CI User rolemmm
   TL_USER: 003e0ae1-64a8-498c-a7e8-2415eb237d2a
   # The password for this user account
   TL_PASS: KIQ8em/dHSL/vO8lgh8BAcYmZ14=
