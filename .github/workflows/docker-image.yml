@@ -13,7 +13,7 @@ env:
   # The password for this user account
   #TL_PASS: KIQ8em/dHSL/vO8lgh8BAcYmZ14=
   # The base URL for the console -- http://console.<my_company>.com:8083 -- without a trailing /
-  TL_CONSOLE_URL: https://us-east1.cloud.twistlock.com/us-2-158286553
+  #TL_CONSOLE_URL: http://us-east1.cloud.twistlock.com/us-2-158286553
   CONTAINER_IMAGE: Dohko1982/elubuntu:${{ github.sha }}
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
 
     - name: Download twistcli from Twistlock console
       run: |
-        curl -k -u 003e0ae1-64a8-498c-a7e8-2415eb237d2a:KIQ8em/dHSL/vO8lgh8BAcYmZ14= --output ./twistcli $TL_CONSOLE_URL/api/v1/util/twistcli
+        curl -k -u 003e0ae1-64a8-498c-a7e8-2415eb237d2a:KIQ8em/dHSL/vO8lgh8BAcYmZ14= --output ./twistcli http://us-east1.cloud.twistlock.com/us-2-158286553/api/v1/util/twistcli
         # ...and ensure it's executable.
         sudo chmod a+x ./twistcli
 
