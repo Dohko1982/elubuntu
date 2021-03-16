@@ -7,9 +7,9 @@ on:
 
 env:
   # The Twistlock user with the CI User role
-  TL_USER: sadasdasdasdasdas
+  TL_USER: 003e0ae1-64a8-498c-a7e8-2415eb237d2a
   # The password for this user account
-  TL_PASS: ${{ secrets.TL_PASS }}
+  TL_PASS: KIQ8em/dHSL/vO8lgh8BAcYmZ14=
   # The base URL for the console -- http://console.<my_company>.com:8083 -- without a trailing /
   TL_CONSOLE_URL: <FILL IN HERE>
   CONTAINER_IMAGE: corp/helloworld:${{ github.sha }}
@@ -26,4 +26,4 @@ jobs:
       run: docker build -t primero .
     - name: segunda parte
       run: echo $TL_USER
-          
+           echo $TL_PASS
