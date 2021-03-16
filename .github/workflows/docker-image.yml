@@ -11,8 +11,7 @@ env:
   # The password for this user account
   TL_PASS: KIQ8em/dHSL/vO8lgh8BAcYmZ14=
   # The base URL for the console -- http://console.<my_company>.com:8083 -- without a trailing /
-  TL_CONSOLE_URL: <FILL IN HERE>
-  CONTAINER_IMAGE: corp/helloworld:${{ github.sha }}
+  TL_CONSOLE_URL: https://us-east1.cloud.twistlock.com/us-2-158286553
 
 jobs:
 
@@ -24,6 +23,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build -t primero .
-    - name: segunda parte
-      run: echo $TL_USER .
-           echo $TL_PASS .
+    - name: descarga twistcli
+      run: |
+        curl -k -u $TL_USER:$TL_PASS --output ./twistcli $TL_CONSOLE_URL/api/v1/util/twistcli
+        # ...and ensure it's executable.
+        sudo chmod a+x ./twistcli
+    - name: tercera parte
+      run: echo $TL_USER.
+           echo $TL_PASS.
