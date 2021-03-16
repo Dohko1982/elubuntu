@@ -1,6 +1,9 @@
 name: Docker Image CI
 on:
   push:
+    branches: [name: Docker Image CI
+on:
+  push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
@@ -31,6 +34,11 @@ jobs:
     - name: Build the Docker image
       run: docker build -t primero .
     
-    - name: tercera parte
-      run: echo $TL_USER.
+    - name: Scan image
+      env:
+        CONTAINER_IMAGE: ${{ steps.build-image.outputs.image }}
+      run:
+
+    - name: cuarta parte
+      run: echo $CONTAINER_IMAGE.
            echo $TL_PASS.
