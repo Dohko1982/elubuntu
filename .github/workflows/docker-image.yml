@@ -1,10 +1,18 @@
 name: Docker Image CI
-#sdfsdf
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+
+env:
+  # The Twistlock user with the CI User role
+  TL_USER: ${{ secrets.TL_USER }}
+  # The password for this user account
+  TL_PASS: ${{ secrets.TL_PASS }}
+  # The base URL for the console -- http://console.<my_company>.com:8083 -- without a trailing /
+  TL_CONSOLE_URL: <FILL IN HERE>
+  CONTAINER_IMAGE: corp/helloworld:${{ github.sha }}
 
 jobs:
 
