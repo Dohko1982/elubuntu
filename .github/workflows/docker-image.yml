@@ -37,7 +37,7 @@ jobs:
     
     - name: Scan image
       run: |
-        ./twistcli images scan --details -address $TL_CONSOLE_URL -u $TL_USER -p $TL_PASS $CONTAINER_IMAGE
+        ./twistcli images scan --details -address $TL_CONSOLE_URL -u $TL_USER -p $TL_PASS $CONTAINER_IMAGE --vulnerability-threshold medium
         echo $CONTAINER_IMAGE
 
     - name: cuarta parte
